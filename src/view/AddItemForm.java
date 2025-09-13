@@ -155,6 +155,7 @@ public class AddItemForm extends javax.swing.JFrame {
     private void clearFields() {
         codeText.setText("");
         descriptionText.setText("");
+        packSizeText.setText("");
         unitPriceText.setText("");
         qtyText.setText("");
     }

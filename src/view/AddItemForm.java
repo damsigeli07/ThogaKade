@@ -131,19 +131,19 @@ public class AddItemForm extends javax.swing.JFrame {
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {
         dispose();
     }
-
     private void addItemButtonActionPerformed(java.awt.event.ActionEvent evt) {
         String code = codeText.getText();
         String description = descriptionText.getText();
+        String packSize = packSizeText.getText();
         double unitPrice = Double.parseDouble(unitPriceText.getText());
         int qty = Integer.parseInt(qtyText.getText());
+
 
         Item item = new Item(code, description, packSize, unitPrice, qty);
         try {
             boolean isAdded = ItemController.addItem(item);
             if (isAdded) {
                 JOptionPane.showMessageDialog(this, "Item Added Successfully");
-                clearFields();
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, ex.getMessage());

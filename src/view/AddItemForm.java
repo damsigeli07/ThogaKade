@@ -10,6 +10,7 @@ public class AddItemForm extends javax.swing.JFrame {
     public AddItemForm() {
         initComponents();
         setTitle("Add New Item");
+        setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")

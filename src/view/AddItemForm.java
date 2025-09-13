@@ -21,6 +21,7 @@ public class AddItemForm extends javax.swing.JFrame {
         descriptionText = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         unitPriceText = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
         qtyText = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         cancelButton = new javax.swing.JButton();
@@ -43,14 +44,14 @@ public class AddItemForm extends javax.swing.JFrame {
         descriptionText.setFont(new java.awt.Font("Tahoma", 1, 18));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18));
-        jLabel4.setText("Unit Price");
+        jLabel4.setText("Pack Size");
 
         unitPriceText.setFont(new java.awt.Font("Tahoma", 1, 18));
 
         qtyText.setFont(new java.awt.Font("Tahoma", 1, 18));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18));
-        jLabel5.setText("Quantity");
+        jLabel5.setText("Unit Price");
 
         cancelButton.setFont(new java.awt.Font("Tahoma", 1, 18));
         cancelButton.setText("Cancel");

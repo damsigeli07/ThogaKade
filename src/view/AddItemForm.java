@@ -138,7 +138,7 @@ public class AddItemForm extends javax.swing.JFrame {
         double unitPrice = Double.parseDouble(unitPriceText.getText());
         int qty = Integer.parseInt(qtyText.getText());
 
-        Item item = new Item(code, description, unitPrice, qty);
+        Item item = new Item(code, description, packSize, unitPrice, qty);
         try {
             boolean isAdded = ItemController.addItem(item);
             if (isAdded) {

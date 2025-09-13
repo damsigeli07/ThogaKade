@@ -1,15 +1,26 @@
-
 package view;
 
 import java.sql.SQLException;
+import java.time.LocalDate;
 import javax.swing.JOptionPane;
-import model.Customer;
-import controller.CustomerController;
+import lk.icet.thogakade.model.Customer;
+import lk.icet.thogakade.controller.CustomerController;
+import com.toedter.calendar.JDateChooser;
 
-public class AddcustomerForm extends javax.swing.JFrame {
+public class AddCustomerForm extends javax.swing.JFrame {
 
-    public AddcustomerForm() {
+    public AddCustomerForm() {
         initComponents();
+        setLocationRelativeTo(null);
+        loadTitles();
+    }
+    
+    private void loadTitles() {
+        titleCombo.addItem("Mr");
+        titleCombo.addItem("Mrs");
+        titleCombo.addItem("Miss");
+        titleCombo.addItem("Ms");
+        titleCombo.addItem("Dr");
     }
 
     @SuppressWarnings("unchecked")
@@ -17,43 +28,79 @@ public class AddcustomerForm extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        idText = new javax.swing.JTextField();
+        custIdText = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        nameText = new javax.swing.JTextField();
+        titleCombo = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
-        addressText = new javax.swing.JTextField();
-        salaryText = new javax.swing.JTextField();
+        custNameText = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        dobChooser = new com.toedter.calendar.JDateChooser();
+        jLabel6 = new javax.swing.JLabel();
+        salaryText = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        addressText = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        cityText = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        provinceText = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        postalCodeText = new javax.swing.JTextField();
         cancelButton = new javax.swing.JButton();
         addCustomerButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Add Customer");
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Add Customer Form");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setText("Customer ID");
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14));
+        jLabel2.setText("Customer ID:");
 
-        idText.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        custIdText.setFont(new java.awt.Font("Tahoma", 0, 14));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setText("Name");
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14));
+        jLabel3.setText("Title:");
 
-        nameText.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        titleCombo.setFont(new java.awt.Font("Tahoma", 0, 14));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel4.setText("Address");
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14));
+        jLabel4.setText("Customer Name:");
 
-        addressText.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        custNameText.setFont(new java.awt.Font("Tahoma", 0, 14));
 
-        salaryText.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14));
+        jLabel5.setText("Date of Birth:");
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel5.setText("Salary");
+        dobChooser.setFont(new java.awt.Font("Tahoma", 0, 14));
 
-        cancelButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14));
+        jLabel6.setText("Salary:");
+
+        salaryText.setFont(new java.awt.Font("Tahoma", 0, 14));
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14));
+        jLabel7.setText("Address:");
+
+        addressText.setFont(new java.awt.Font("Tahoma", 0, 14));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14));
+        jLabel8.setText("City:");
+
+        cityText.setFont(new java.awt.Font("Tahoma", 0, 14));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14));
+        jLabel9.setText("Province:");
+
+        provinceText.setFont(new java.awt.Font("Tahoma", 0, 14));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14));
+        jLabel10.setText("Postal Code:");
+
+        postalCodeText.setFont(new java.awt.Font("Tahoma", 0, 14));
+
+        cancelButton.setFont(new java.awt.Font("Tahoma", 1, 14));
         cancelButton.setText("Cancel");
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,7 +108,7 @@ public class AddcustomerForm extends javax.swing.JFrame {
             }
         });
 
-        addCustomerButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        addCustomerButton.setFont(new java.awt.Font("Tahoma", 1, 14));
         addCustomerButton.setText("Add Customer");
         addCustomerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,20 +123,30 @@ public class AddcustomerForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nameText, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(idText, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(addressText, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(salaryText, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(custIdText, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(titleCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(custNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dobChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(salaryText, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(addressText, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cityText, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(provinceText, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(postalCodeText, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 50, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(addCustomerButton)
@@ -101,24 +158,44 @@ public class AddcustomerForm extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(idText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(custIdText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(nameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(titleCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
+                    .addComponent(custNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(dobChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(salaryText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
                     .addComponent(addressText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(salaryText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                    .addComponent(jLabel8)
+                    .addComponent(cityText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(provinceText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(postalCodeText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelButton)
                     .addComponent(addCustomerButton))
@@ -126,76 +203,71 @@ public class AddcustomerForm extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
-
-    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
-        dispose();
-    }//GEN-LAST:event_cancelButtonActionPerformed
-
-    private void addCustomerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCustomerButtonActionPerformed
-        String id = idText.getText();
-        String name = nameText.getText();
-        String address = addressText.getText();
-        double salary = Double.parseDouble(salaryText.getText());
-        Customer customer=new Customer(id,name,address,salary);
-        try {
-            boolean isAdded = CustomerController.addCustomer(customer);
-            if (isAdded) {
-                JOptionPane.showMessageDialog(this, "Added Success");
-            }
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(this, ex.getMessage());
-        } catch (ClassNotFoundException ex) {
-            JOptionPane.showMessageDialog(this, "Driver not found");
-        }
-    }//GEN-LAST:event_addCustomerButtonActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AddcustomerForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AddcustomerForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AddcustomerForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AddcustomerForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AddcustomerForm().setVisible(true);
-            }
-        });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        dispose();
+    }
+
+    private void addCustomerButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        try {
+            String custID = custIdText.getText();
+            String title = titleCombo.getSelectedItem().toString();
+            String name = custNameText.getText();
+            LocalDate dob = dobChooser.getDate().toInstant().atZone(java.time.ZoneId.systemDefault()).toLocalDate();
+            double salary = Double.parseDouble(salaryText.getText());
+            String address = addressText.getText();
+            String city = cityText.getText();
+            String province = provinceText.getText();
+            String postalCode = postalCodeText.getText();
+            
+            Customer customer = new Customer(custID, title, name, dob, salary, address, city, province, postalCode);
+            
+            boolean isAdded = CustomerController.addCustomer(customer);
+            if (isAdded) {
+                JOptionPane.showMessageDialog(this, "Customer Added Successfully");
+                clearFields();
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage());
+        }
+    }
+    
+    private void clearFields() {
+        custIdText.setText("");
+        custNameText.setText("");
+        dobChooser.setDate(null);
+        salaryText.setText("");
+        addressText.setText("");
+        cityText.setText("");
+        provinceText.setText("");
+        postalCodeText.setText("");
+    }
+
+    public static void main(String args[]) {
+        java.awt.EventQueue.invokeLater(() -> new AddCustomerForm().setVisible(true));
+    }
+
+    // Variables declaration
     private javax.swing.JButton addCustomerButton;
     private javax.swing.JTextField addressText;
     private javax.swing.JButton cancelButton;
-    private javax.swing.JTextField idText;
+    private javax.swing.JTextField cityText;
+    private javax.swing.JTextField custIdText;
+    private javax.swing.JTextField custNameText;
+    private com.toedter.calendar.JDateChooser dobChooser;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField nameText;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField postalCodeText;
+    private javax.swing.JTextField provinceText;
     private javax.swing.JTextField salaryText;
-    // End of variables declaration//GEN-END:variables
+    private javax.swing.JComboBox<String> titleCombo;
 }

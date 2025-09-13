@@ -1,82 +1,42 @@
-
 package model;
 
 public class Item {
-    
-    private String code;
+    private String itemCode;
     private String description;
+    private String packSize;
     private double unitPrice;
     private int qtyOnHand;
 
     public Item() {
     }
 
-    public Item(String code, String description, double unitPrice, int qtyOnHand) {
-        this.code = code;
+    public Item(String itemCode, String description, String packSize, double unitPrice, int qtyOnHand) {
+        this.itemCode = itemCode;
         this.description = description;
+        this.packSize = packSize;
         this.unitPrice = unitPrice;
         this.qtyOnHand = qtyOnHand;
     }
-    
-    /**
-     * @return the code
-     */
-    public String getCode() {
-        return code;
-    }
 
-    /**
-     * @param code the code to set
-     */
-    public void setCode(String code) {
-        this.code = code;
-    }
+    // Getters and Setters
+    public String getItemCode() { return itemCode; }
+    public void setItemCode(String itemCode) { this.itemCode = itemCode; }
 
-    /**
-     * @return the description
-     */
-    public String getDescription() {
-        return description;
-    }
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description; }
 
-    /**
-     * @param description the description to set
-     */
-    public void setDescription(String description) {
-        this.description = description;
-    }
+    public String getPackSize() { return packSize; }
+    public void setPackSize(String packSize) { this.packSize = packSize; }
 
-    /**
-     * @return the unitPrice
-     */
-    public double getUnitPrice() {
-        return unitPrice;
-    }
+    public double getUnitPrice() { return unitPrice; }
+    public void setUnitPrice(double unitPrice) { this.unitPrice = unitPrice; }
 
-    /**
-     * @param unitPrice the unitPrice to set
-     */
-    public void setUnitPrice(double unitPrice) {
-        this.unitPrice = unitPrice;
-    }
-
-    /**
-     * @return the qtyOnHand
-     */
-    public int getQtyOnHand() {
-        return qtyOnHand;
-    }
-
-    /**
-     * @param qtyOnHand the qtyOnHand to set
-     */
-    public void setQtyOnHand(int qtyOnHand) {
-        this.qtyOnHand = qtyOnHand;
-    }
+    public int getQtyOnHand() { return qtyOnHand; }
+    public void setQtyOnHand(int qtyOnHand) { this.qtyOnHand = qtyOnHand; }
 
     @Override
     public String toString() {
-        return "Item{" + "code=" + code + ", description=" + description + ", unitPrice=" + unitPrice + ", qtyOnHand=" + qtyOnHand + '}';
-    }   
-    
+        return "Item{" + "itemCode=" + itemCode + ", description=" + description + 
+               ", packSize=" + packSize + ", unitPrice=" + unitPrice + ", qtyOnHand=" + qtyOnHand + '}';
+    }
 }

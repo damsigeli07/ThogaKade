@@ -144,6 +144,7 @@ public class AddItemForm extends javax.swing.JFrame {
             boolean isAdded = ItemController.addItem(item);
             if (isAdded) {
                 JOptionPane.showMessageDialog(this, "Item Added Successfully");
+                clearFields();
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, ex.getMessage());

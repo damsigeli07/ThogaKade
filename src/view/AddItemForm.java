@@ -29,31 +29,31 @@ public class AddItemForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36));
+        jLabel1.setFont(new java.awt.Font(java.awt.Font.DIALOG, java.awt.Font.BOLD, 36));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Add Item Form");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18));
+        jLabel2.setFont(new java.awt.Font(java.awt.Font.DIALOG, java.awt.Font.BOLD, 18));
         jLabel2.setText("Item Code");
 
-        codeText.setFont(new java.awt.Font("Tahoma", 1, 18));
+        codeText.setFont(new java.awt.Font(java.awt.Font.DIALOG, java.awt.Font.BOLD, 18));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18));
+        jLabel3.setFont(new java.awt.Font(java.awt.Font.DIALOG, java.awt.Font.BOLD, 18));
         jLabel3.setText("Description");
 
-        descriptionText.setFont(new java.awt.Font("Tahoma", 1, 18));
+        descriptionText.setFont(new java.awt.Font(java.awt.Font.DIALOG, java.awt.Font.BOLD, 18));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18));
+        jLabel4.setFont(new java.awt.Font(java.awt.Font.DIALOG, java.awt.Font.BOLD, 18));
         jLabel4.setText("Pack Size");
 
-        unitPriceText.setFont(new java.awt.Font("Tahoma", 1, 18));
+        unitPriceText.setFont(new java.awt.Font(java.awt.Font.DIALOG, java.awt.Font.BOLD, 18));
 
-        qtyText.setFont(new java.awt.Font("Tahoma", 1, 18));
+        qtyText.setFont(new java.awt.Font(java.awt.Font.DIALOG, java.awt.Font.BOLD, 18));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18));
+        jLabel5.setFont(new java.awt.Font(java.awt.Font.DIALOG, java.awt.Font.BOLD, 18));
         jLabel5.setText("Unit Price");
 
-        cancelButton.setFont(new java.awt.Font("Tahoma", 1, 18));
+        cancelButton.setFont(new java.awt.Font(java.awt.Font.DIALOG, java.awt.Font.BOLD, 18));
         cancelButton.setText("Cancel");
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,7 +61,7 @@ public class AddItemForm extends javax.swing.JFrame {
             }
         });
 
-        addItemButton.setFont(new java.awt.Font("Tahoma", 1, 18));
+        addItemButton.setFont(new java.awt.Font(java.awt.Font.DIALOG, java.awt.Font.BOLD, 18));
         addItemButton.setText("Add Item");
         addItemButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

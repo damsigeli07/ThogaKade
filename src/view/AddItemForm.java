@@ -11,6 +11,7 @@ public class AddItemForm extends javax.swing.JFrame {
         initComponents();
         setTitle("Add New Item");
         setLocationRelativeTo(null);
+        setResizable(false);
     }
 
     @SuppressWarnings("unchecked")

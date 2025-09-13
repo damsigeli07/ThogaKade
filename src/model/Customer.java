@@ -1,76 +1,59 @@
-
 package model;
 
+import java.time.LocalDate;
+
 public class Customer {
-    private String id;
-    private String name;
-    private String address;
+    private String custID;
+    private String custTitle;
+    private String custName;
+    private LocalDate DOB;
     private double salary;
+    private String custAddress;
+    private String city;
+    private String province;
+    private String postalCode;
 
     public Customer() {
     }
 
-    public Customer(String id, String name, String address, double salary) {
-        this.id = id;
-        this.name = name;
-        this.address = address;
+    public Customer(String custID, String custTitle, String custName, LocalDate DOB, 
+                   double salary, String custAddress, String city, String province, String postalCode) {
+        this.custID = custID;
+        this.custTitle = custTitle;
+        this.custName = custName;
+        this.DOB = DOB;
         this.salary = salary;
+        this.custAddress = custAddress;
+        this.city = city;
+        this.province = province;
+        this.postalCode = postalCode;
     }
 
-    /**
-     * @return the id
-     */
-    public String getId() {
-        return id;
-    }
+    // Getters and Setters
+    public String getCustID() { return custID; }
+    public void setCustID(String custID) { this.custID = custID; }
 
-    /**
-     * @param id the id to set
-     */
-    public void setId(String id) {
-        this.id = id;
-    }
+    public String getCustTitle() { return custTitle; }
+    public void setCustTitle(String custTitle) { this.custTitle = custTitle; }
 
-    /**
-     * @return the name
-     */
-    public String getName() {
-        return name;
-    }
+    public String getCustName() { return custName; }
+    public void setCustName(String custName) { this.custName = custName; }
 
-    /**
-     * @param name the name to set
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
+    public LocalDate getDOB() { return DOB; }
+    public void setDOB(LocalDate DOB) { this.DOB = DOB; }
 
-    /**
-     * @return the address
-     */
-    public String getAddress() {
-        return address;
-    }
+    public double getSalary() { return salary; }
+    public void setSalary(double salary) { this.salary = salary; }
 
-    /**
-     * @param address the address to set
-     */
-    public void setAddress(String address) {
-        this.address = address;
-    }
+    public String getCustAddress() { return custAddress; }
+    public void setCustAddress(String custAddress) { this.custAddress = custAddress; }
 
-    /**
-     * @return the salary
-     */
-    public double getSalary() {
-        return salary;
-    }
+    public String getCity() { return city; }
+    public void setCity(String city) { this.city = city; }
 
-    /**
-     * @param salary the salary to set
-     */
-    public void setSalary(double salary) {
-        this.salary = salary;
-    }
-    
+    public String getProvince() { return province; }
+    public void setProvince(String province) { this.province = province; }
+
+    public String getPostalCode() { return postalCode; }
+    public void setPostalCode(String postalCode) { this.postalCode = postalCode; }
 }

@@ -94,7 +94,7 @@ public class ViewCustomerForm extends javax.swing.JFrame {
             DefaultTableModel dtm = (DefaultTableModel) customerTable.getModel();
             dtm.setRowCount(0);
             for (Customer customer : customerList) {
-                Object[] rowData={customer.getId(),customer.getName(),customer.getAddress(),customer.getSalary()};
+                Object[] rowData={customer.getCustID(),customer.getCustName(),customer.getCustAddress(),customer.getSalary()};
                 dtm.addRow(rowData);
             }
 

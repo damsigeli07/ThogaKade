@@ -28,7 +28,7 @@ public class ItemController {
         Connection connection = DBConnection.getInstance().getConnection();
         PreparedStatement pstm = connection.prepareStatement("INSERT INTO Item VALUES (?,?,?,?)");
 
-        pstm.setObject(1, item.getCode());
+        pstm.setObject(1, item.getItemCode());
         pstm.setObject(2, item.getDescription());
         pstm.setObject(3, item.getUnitPrice());
         pstm.setObject(4, item.getQtyOnHand());
@@ -49,7 +49,7 @@ public class ItemController {
         while (rst.next()) {
 
             Item item = new Item();
-            item.setCode(rst.getString(1));
+            item.setItemCode(rst.getString(1));
             item.setDescription(rst.getString(2));
             item.setUnitPrice(rst.getDouble(3));
             item.setQtyOnHand(rst.getInt(4));
@@ -68,7 +68,7 @@ public class ItemController {
 
         if (rst.next()) {
             Item item = new Item();
-            item.setCode(rst.getString(1));
+            item.setItemCode(rst.getString(1));
             item.setDescription(rst.getString(2));
             item.setUnitPrice(rst.getDouble(3));
             item.setQtyOnHand(rst.getInt(4));

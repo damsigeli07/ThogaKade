@@ -91,7 +91,7 @@ public class ViewItemsForm extends javax.swing.JFrame {
             DefaultTableModel dtm = (DefaultTableModel) itemsTable.getModel();
             dtm.setRowCount(0);
             for (Item item : itemList) {
-                Object[] rowData = {item.getCode(), item.getDescription(), item.getUnitPrice(), item.getQtyOnHand()};
+                Object[] rowData = {item.getItemCode(), item.getDescription(), item.getUnitPrice(), item.getQtyOnHand()};
                 dtm.addRow(rowData);
             }
         } catch (SQLException ex) {

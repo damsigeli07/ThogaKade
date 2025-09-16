@@ -461,7 +461,7 @@ public class OrderForm extends javax.swing.JFrame {
     private void cmbCustomerIdItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbCustomerIdItemStateChanged
         try {
             String customerId = cmbCustomerId.getSelectedItem().toString();
-            lblCustomerName.setText(CustomerController.searchCustomer(customerId).getName());
+            lblCustomerName.setText(CustomerController.searchCustomer(customerId).getCustName());
         } catch (SQLException | ClassNotFoundException e) {
 
         }

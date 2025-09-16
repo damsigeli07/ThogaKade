@@ -161,8 +161,8 @@ public class DeleteCustomerForm extends javax.swing.JFrame {
         try {
             Customer customer=CustomerController.searchCustomer(idText.getText());
             if(customer!=null){
-                nameText.setText(customer.getName());
-                addressText.setText(customer.getAddress());
+                nameText.setText(customer.getCustName());
+                addressText.setText(customer.getCustAddress());
                 salaryText.setText(customer.getSalary()+"");
             }else{
                 JOptionPane.showMessageDialog(this, "Customer not found...");
